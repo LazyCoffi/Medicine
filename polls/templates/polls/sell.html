@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="../sellInfo/" method="post">
+    {% csrf_token %}
+    <input name="id" type="text">
+    <input name="mid" type="text">
+    <input name="num" type="number">
+    <input name="iprice" type="number">
+    <input name="type" hidden value="add">
+    <input value="提交" type="submit">
+</form>
+<ul>
+    {% for item in result.values %}
+        <li>{{ item.进货单号 }}</li>
+        <li>{{ item.厂家注册号 }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

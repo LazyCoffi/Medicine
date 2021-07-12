@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="../register/" method="post">
+    {% csrf_token %}
+    <input type="text" required name="username">
+    <input type="password" required name="password">
+    <input type="checkbox" value="普通用户" checked="checked" name="privilege">
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>

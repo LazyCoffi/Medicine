@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action='../industry/' method="post">
+        {% csrf_token %}
+        <input type="text" name="id" required>
+        <input type="text" name="name">
+        <input type="text" name="addr">
+        <input type="text" name="department">
+        <input type="hidden" name="type" value="add">
+        <input type="submit" value="增加">
+    </form>
+    <form action='../industry/' method="post">
+        {% csrf_token %}
+        <input type="text" name="id">
+        <input type="text" name="name">
+        <input type="text" name="addr">
+        <input type="text" name="department">
+        <input type="hidden" name="type" value="update">
+        <input type="submit" value="修改">
+    </form>
+    <form action='../industry/' method="post">
+        {% csrf_token %}
+        <input type="text" name="id">
+        <input type="text" name="name">
+        <input type="text" name="addr">
+        <input type="text" name="department">
+        <input type="hidden" name="type" value="delete">
+        <input type="submit" value="删除">
+    </form>
+    <form action='../industry/' method="get">
+        {% csrf_token %}
+        <input type="text" name="id">
+        <input type="text" name="name">
+        <input type="text" name="addr">
+        <input type="text" name="department">
+        <input type="submit" value="查询">
+    </form>
+    <ul>
+        {% for item in result.values %}
+        <li> {{ item.厂家注册号 }} </li>
+        <li> {{ item.厂家名字 }} </li>
+        <li> {{ item.厂家地址 }} </li>
+        <li> {{ item.厂家登记机关 }} </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
